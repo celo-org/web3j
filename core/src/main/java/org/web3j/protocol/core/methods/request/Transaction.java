@@ -39,6 +39,10 @@ public class Transaction {
     private BigInteger value;
     private String data;
     private BigInteger nonce; // nonce field is not present on eth_call/eth_estimateGas
+    private String feeCurrency;
+    private String gatewayFeeRecipient;
+    private String gatewayFee;
+
 
     public Transaction(
             String from,
@@ -47,13 +51,24 @@ public class Transaction {
             BigInteger gasLimit,
             String to,
             BigInteger value,
-            String data) {
+            String data,
+            String feeCurrency,
+            String gatewayFeeRecipient,
+            String gatewayFee) {
         this.from = from;
         this.to = to;
         this.gas = gasLimit;
         this.gasPrice = gasPrice;
         this.value = value;
-
+        if (feeCurrency != null) {
+          this.feeCurrency = feeCurrency;
+        }
+        if (gatewayFeeRecipient != null) {
+          this.gatewayFeeRecipient = gatewayFeeRecipient;
+        }
+        if (gatewayFee != null) {
+          this.gatewayFee = gatewayFee;
+        }
         if (data != null) {
             this.data = Numeric.prependHexPrefix(data);
         }
@@ -69,7 +84,7 @@ public class Transaction {
             BigInteger value,
             String init) {
 
-        return new Transaction(from, nonce, gasPrice, gasLimit, null, value, init);
+        return new Transaction(from, nonce, gasPrice, gasLimit, null, value, init, null, null, null);
     }
 
     public static Transaction createContractTransaction(
@@ -86,7 +101,7 @@ public class Transaction {
             String to,
             BigInteger value) {
 
-        return new Transaction(from, nonce, gasPrice, gasLimit, to, value, null);
+        return new Transaction(from, nonce, gasPrice, gasLimit, to, value, null, null, null, null);
     }
 
     public static Transaction createFunctionCallTransaction(
@@ -98,7 +113,7 @@ public class Transaction {
             BigInteger value,
             String data) {
 
-        return new Transaction(from, nonce, gasPrice, gasLimit, to, value, data);
+        return new Transaction(from, nonce, gasPrice, gasLimit, to, value, data, null, null, null);
     }
 
     public static Transaction createFunctionCallTransaction(
@@ -109,12 +124,12 @@ public class Transaction {
             String to,
             String data) {
 
-        return new Transaction(from, nonce, gasPrice, gasLimit, to, null, data);
+        return new Transaction(from, nonce, gasPrice, gasLimit, to, null, data, null, null, null);
     }
 
     public static Transaction createEthCallTransaction(String from, String to, String data) {
 
-        return new Transaction(from, null, null, null, to, null, data);
+        return new Transaction(from, null, null, null, to, null, data, null, null, null);
     }
 
     public String getFrom() {
@@ -143,6 +158,18 @@ public class Transaction {
 
     public String getNonce() {
         return convert(nonce);
+    }
+
+    public String getFeeCurrency() {
+      return feeCurrency;
+    }
+
+    public String getGatewayFeeRecipient() {
+      return gatewayFeeRecipient;
+    }
+
+    public String getGatewayFee() {
+      return gatewayFee;
     }
 
     private static String convert(BigInteger value) {

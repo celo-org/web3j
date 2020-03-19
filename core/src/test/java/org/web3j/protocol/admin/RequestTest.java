@@ -15,7 +15,6 @@ package org.web3j.protocol.admin;
 import java.math.BigInteger;
 
 import org.junit.jupiter.api.Test;
-
 import org.web3j.protocol.RequestTester;
 import org.web3j.protocol.core.methods.request.Transaction;
 import org.web3j.protocol.http.HttpService;
@@ -57,7 +56,7 @@ public class RequestTest extends RequestTester {
                                 BigInteger.ONE,
                                 "TO",
                                 BigInteger.ZERO,
-                                "DATA"),
+                                "DATA", null, null, null),
                         "password")
                 .send();
 
