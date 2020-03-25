@@ -42,7 +42,7 @@ public class RawPrivateTransaction extends RawTransaction {
             final List<Base64String> privateFor,
             final Base64String privacyGroupId,
             final Restriction restriction) {
-        super(nonce, gasPrice, gasLimit, to, BigInteger.ZERO, data);
+        super(nonce, gasPrice, gasLimit, "", "", "", to, BigInteger.ZERO, data);
         this.privateFrom = privateFrom;
         this.privateFor = privateFor;
         this.privacyGroupId = privacyGroupId;

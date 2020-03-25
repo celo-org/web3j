@@ -43,7 +43,6 @@ public class Transaction {
     private String gatewayFeeRecipient;
     private String gatewayFee;
 
-
     public Transaction(
             String from,
             BigInteger nonce,
@@ -61,13 +60,13 @@ public class Transaction {
         this.gasPrice = gasPrice;
         this.value = value;
         if (feeCurrency != null) {
-          this.feeCurrency = feeCurrency;
+            this.feeCurrency = feeCurrency;
         }
         if (gatewayFeeRecipient != null) {
-          this.gatewayFeeRecipient = gatewayFeeRecipient;
+            this.gatewayFeeRecipient = gatewayFeeRecipient;
         }
         if (gatewayFee != null) {
-          this.gatewayFee = gatewayFee;
+            this.gatewayFee = gatewayFee;
         }
         if (data != null) {
             this.data = Numeric.prependHexPrefix(data);
@@ -84,7 +83,8 @@ public class Transaction {
             BigInteger value,
             String init) {
 
-        return new Transaction(from, nonce, gasPrice, gasLimit, null, value, init, null, null, null);
+        return new Transaction(
+                from, nonce, gasPrice, gasLimit, null, value, init, null, null, null);
     }
 
     public static Transaction createContractTransaction(
@@ -161,15 +161,15 @@ public class Transaction {
     }
 
     public String getFeeCurrency() {
-      return feeCurrency;
+        return feeCurrency;
     }
 
     public String getGatewayFeeRecipient() {
-      return gatewayFeeRecipient;
+        return gatewayFeeRecipient;
     }
 
     public String getGatewayFee() {
-      return gatewayFee;
+        return gatewayFee;
     }
 
     private static String convert(BigInteger value) {

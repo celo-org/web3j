@@ -38,31 +38,34 @@ public class PrivateTransactionDecoder {
 
         final RawTransaction rawTransaction = TransactionDecoder.decode(hexTransaction);
 
-        if (values.size() == 9) {
-            final Base64String privateFrom = extractBase64(values.get(6));
-            final Restriction restriction = extractRestriction(values.get(8));
-            if (values.get(7) instanceof RlpList) {
-                return new RawPrivateTransaction(
-                        rawTransaction, privateFrom, extractBase64List(values.get(7)), restriction);
-            } else {
-                return new RawPrivateTransaction(
-                        rawTransaction, privateFrom, extractBase64(values.get(7)), restriction);
-            }
-
-        } else {
+        if (values.size() == 12) {
             final Base64String privateFrom = extractBase64(values.get(9));
             final Restriction restriction = extractRestriction(values.get(11));
             if (values.get(10) instanceof RlpList) {
+                return new RawPrivateTransaction(
+                        rawTransaction,
+                        privateFrom,
+                        extractBase64List(values.get(10)),
+                        restriction);
+            } else {
+                return new RawPrivateTransaction(
+                        rawTransaction, privateFrom, extractBase64(values.get(10)), restriction);
+            }
+
+        } else {
+            final Base64String privateFrom = extractBase64(values.get(12));
+            final Restriction restriction = extractRestriction(values.get(14));
+            if (values.get(13) instanceof RlpList) {
                 return new SignedRawPrivateTransaction(
                         (SignedRawTransaction) rawTransaction,
                         privateFrom,
-                        extractBase64List(values.get(10)),
+                        extractBase64List(values.get(13)),
                         restriction);
             } else {
                 return new SignedRawPrivateTransaction(
                         (SignedRawTransaction) rawTransaction,
                         privateFrom,
-                        extractBase64(values.get(10)),
+                        extractBase64(values.get(13)),
                         restriction);
             }
         }

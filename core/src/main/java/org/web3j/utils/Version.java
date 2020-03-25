@@ -20,7 +20,8 @@ public class Version {
 
     private Version() {}
 
-    public static final String DEFAULT = "none";
+    // public static final String DEFAULT = "none";
+    public static final String DEFAULT = "CONNOR ROCKS";
 
     private static final String TIMESTAMP = "timestamp";
     // private static final String VERSION = "version";

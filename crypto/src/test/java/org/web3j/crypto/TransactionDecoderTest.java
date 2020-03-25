@@ -113,10 +113,10 @@ public class TransactionDecoderTest {
     public void testRSize31() throws Exception {
 
         String hexTransaction =
-                "0xf883370183419ce09433c98f20dd73d7bb1d533c4aa3371f2b30c6ebde80a45093dc7d00000000000000000000000000000000000000000000000000000000000000351c9fb90996c836fb34b782ee3d6efa9e2c79a75b277c014e353b51b23b00524d2da07435ebebca627a51a863bf590aff911c4746ab8386a0477c8221bb89671a5d58";
+                "0xf85880010a808080840add5355887fffffffffffffff801ba0667df8c27d34288b31bb70a9afdd5c8f05855cad4764d43805e85556db91adf1a03e6254afd997bee82bec6d610aec7ca415b819a6abd653549475f11d31a3d207";
 
         RawTransaction result = TransactionDecoder.decode(hexTransaction);
         SignedRawTransaction signedResult = (SignedRawTransaction) result;
-        assertEquals("0x1b609b03e2e9b0275a61fa5c69a8f32550285536", signedResult.getFrom());
+        assertEquals("0xef678007d18427e6022059dbc264f27507cd1ffc", signedResult.getFrom());
     }
 }

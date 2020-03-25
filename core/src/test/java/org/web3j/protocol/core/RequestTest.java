@@ -16,6 +16,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+
 import org.web3j.protocol.RequestTester;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.request.EthFilter;
@@ -255,7 +256,9 @@ public class RequestTest extends RequestTester {
                                 Numeric.toBigInt("0x9184e72a"),
                                 "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb"
                                         + "970870f072445675058bb8eb970870f072445675",
-                                        null, null, null))
+                                null,
+                                null,
+                                null))
                 .send();
 
         verifyResult(
