@@ -57,7 +57,10 @@ public class RequestTest extends RequestTester {
                                 BigInteger.ONE,
                                 "TO",
                                 BigInteger.ZERO,
-                                "DATA"),
+                                "DATA",
+                                null,
+                                null,
+                                null),
                         "password")
                 .send();
 

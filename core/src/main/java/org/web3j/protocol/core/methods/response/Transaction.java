@@ -38,6 +38,9 @@ public class Transaction {
     private String r;
     private String s;
     private long v; // see https://github.com/web3j/web3j/issues/44
+    private String feeCurrency;
+    private String gatewayFeeRecipient;
+    private String gatewayFee;
 
     public Transaction() {}
 
@@ -52,6 +55,9 @@ public class Transaction {
             String value,
             String gas,
             String gasPrice,
+            String feeCurrency,
+            String gatewayFeeRecipient,
+            String gatewayFee,
             String input,
             String creates,
             String publicKey,
@@ -69,6 +75,9 @@ public class Transaction {
         this.value = value;
         this.gasPrice = gasPrice;
         this.gas = gas;
+        this.feeCurrency = feeCurrency;
+        this.gatewayFeeRecipient = gatewayFeeRecipient;
+        this.gatewayFee = gatewayFee;
         this.input = input;
         this.creates = creates;
         this.publicKey = publicKey;
@@ -180,6 +189,18 @@ public class Transaction {
 
     public void setGas(String gas) {
         this.gas = gas;
+    }
+
+    public String getFeeCurrency() {
+        return feeCurrency;
+    }
+
+    public String getGatewayFeeRecipient() {
+        return gatewayFeeRecipient;
+    }
+
+    public String getGatewayFee() {
+        return gatewayFee;
     }
 
     public String getInput() {
@@ -317,6 +338,21 @@ public class Transaction {
                 : that.getGasRaw() != null) {
             return false;
         }
+        if (getFeeCurrency() != null
+                ? !getFeeCurrency().equals(that.getFeeCurrency())
+                : that.getFeeCurrency() != null) {
+            return false;
+        }
+        if (getGatewayFeeRecipient() != null
+                ? !getGatewayFeeRecipient().equals(that.getGatewayFeeRecipient())
+                : that.getGatewayFeeRecipient() != null) {
+            return false;
+        }
+        if (getGatewayFee() != null
+                ? !getGatewayFee().equals(that.getGatewayFee())
+                : that.getGatewayFee() != null) {
+            return false;
+        }
         if (getInput() != null ? !getInput().equals(that.getInput()) : that.getInput() != null) {
             return false;
         }
@@ -355,6 +391,13 @@ public class Transaction {
         result = 31 * result + (getValueRaw() != null ? getValueRaw().hashCode() : 0);
         result = 31 * result + (getGasPriceRaw() != null ? getGasPriceRaw().hashCode() : 0);
         result = 31 * result + (getGasRaw() != null ? getGasRaw().hashCode() : 0);
+        result = 31 * result + (getFeeCurrency() != null ? getFeeCurrency().hashCode() : 0);
+        result = 31 * result + (getGatewayFee() != null ? getGatewayFee().hashCode() : 0);
+        result =
+                31 * result
+                        + (getGatewayFeeRecipient() != null
+                                ? getGatewayFeeRecipient().hashCode()
+                                : 0);
         result = 31 * result + (getInput() != null ? getInput().hashCode() : 0);
         result = 31 * result + (getCreates() != null ? getCreates().hashCode() : 0);
         result = 31 * result + (getPublicKey() != null ? getPublicKey().hashCode() : 0);

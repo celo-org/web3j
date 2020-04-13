@@ -29,17 +29,26 @@ public class RawTransaction {
     private String to;
     private BigInteger value;
     private String data;
+    private String feeCurrency;
+    private String gatewayFeeRecipient;
+    private String gatewayFee;
 
     protected RawTransaction(
             BigInteger nonce,
             BigInteger gasPrice,
             BigInteger gasLimit,
+            String feeCurrency,
+            String gatewayFeeRecipient,
+            String gatewayFee,
             String to,
             BigInteger value,
             String data) {
         this.nonce = nonce;
         this.gasPrice = gasPrice;
         this.gasLimit = gasLimit;
+        this.feeCurrency = feeCurrency;
+        this.gatewayFeeRecipient = gatewayFeeRecipient;
+        this.gatewayFee = gatewayFee;
         this.to = to;
         this.value = value;
         this.data = data != null ? Numeric.cleanHexPrefix(data) : null;
@@ -52,7 +61,7 @@ public class RawTransaction {
             BigInteger value,
             String init) {
 
-        return new RawTransaction(nonce, gasPrice, gasLimit, "", value, init);
+        return new RawTransaction(nonce, gasPrice, gasLimit, "", "", "", "", value, init);
     }
 
     public static RawTransaction createEtherTransaction(
@@ -62,7 +71,7 @@ public class RawTransaction {
             String to,
             BigInteger value) {
 
-        return new RawTransaction(nonce, gasPrice, gasLimit, to, value, "");
+        return new RawTransaction(nonce, gasPrice, gasLimit, "", "", "", to, value, "");
     }
 
     public static RawTransaction createTransaction(
@@ -78,7 +87,7 @@ public class RawTransaction {
             BigInteger value,
             String data) {
 
-        return new RawTransaction(nonce, gasPrice, gasLimit, to, value, data);
+        return new RawTransaction(nonce, gasPrice, gasLimit, "", "", "", to, value, data);
     }
 
     public BigInteger getNonce() {
@@ -91,6 +100,18 @@ public class RawTransaction {
 
     public BigInteger getGasLimit() {
         return gasLimit;
+    }
+
+    public String getFeeCurrency() {
+        return feeCurrency;
+    }
+
+    public String getGatewayFeeRecipient() {
+        return gatewayFeeRecipient;
+    }
+
+    public String getGatewayFee() {
+        return gatewayFee;
     }
 
     public String getTo() {

@@ -20,13 +20,14 @@ public class Version {
 
     private Version() {}
 
-    public static final String DEFAULT = "none";
+    // public static final String DEFAULT = "none";
+    public static final String DEFAULT = "CONNOR ROCKS";
 
     private static final String TIMESTAMP = "timestamp";
-    private static final String VERSION = "version";
+    // private static final String VERSION = "version";
 
     public static String getVersion() throws IOException {
-        return loadProperties().getProperty(VERSION);
+        return "CONNOR ROCKS";
     }
 
     public static String getTimestamp() throws IOException {

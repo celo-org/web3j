@@ -75,7 +75,6 @@ public abstract class TransactionManager {
             BigInteger value,
             boolean constructor)
             throws IOException, TransactionException {
-
         EthSendTransaction ethSendTransaction =
                 sendTransaction(gasPrice, gasLimit, to, data, value, constructor);
         return processResponse(ethSendTransaction);

@@ -107,6 +107,9 @@ public class TransactionEncoder {
         result.add(RlpString.create(rawTransaction.getNonce()));
         result.add(RlpString.create(rawTransaction.getGasPrice()));
         result.add(RlpString.create(rawTransaction.getGasLimit()));
+        result.add(RlpString.create(rawTransaction.getFeeCurrency()));
+        result.add(RlpString.create(rawTransaction.getGatewayFee()));
+        result.add(RlpString.create(rawTransaction.getGatewayFeeRecipient()));
 
         // an empty to address (contract creation) should not be encoded as a numeric 0 value
         String to = rawTransaction.getTo();

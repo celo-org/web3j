@@ -49,5 +49,6 @@ docs/build
 **/.project
 **/.settings
 **/bin
+.vscode
 
 web3j.asc

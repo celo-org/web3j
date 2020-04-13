@@ -604,20 +604,15 @@ public class ResponseTest extends ResponseTester {
                         + "    \"number\": \"0x1b4\",\n"
                         + "    \"hash\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"parentHash\": \"0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5\",\n"
-                        + "    \"nonce\": \"0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2\",\n"
-                        + "    \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n"
                         + "    \"logsBloom\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"transactionsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"stateRoot\": \"0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff\",\n"
                         + "    \"receiptsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"author\": \"0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6\",\n"
                         + "    \"miner\": \"0x4e65fda2159562a496f9f3522f89122a3088497a\",\n"
-                        + "    \"mixHash\": \"0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b\",\n"
-                        + "    \"difficulty\": \"0x027f07\",\n"
                         + "    \"totalDifficulty\":  \"0x027f07\",\n"
                         + "    \"extraData\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n"
                         + "    \"size\":  \"0x027f07\",\n"
-                        + "    \"gasLimit\": \"0x9f759\",\n"
                         + "    \"gasUsed\": \"0x9f759\",\n"
                         + "    \"timestamp\": \"0x54e34e8e\",\n"
                         + "    \"transactions\": ["
@@ -641,20 +636,15 @@ public class ResponseTest extends ResponseTester {
                         "0x1b4",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5",
-                        "0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2",
-                        "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6",
                         "0x4e65fda2159562a496f9f3522f89122a3088497a",
-                        "0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b",
-                        "0x027f07",
                         "0x027f07",
                         "0x0000000000000000000000000000000000000000000000000000000000000000",
                         "0x027f07",
-                        "0x9f759",
                         "0x9f759",
                         "0x54e34e8e",
                         Arrays.asList(
@@ -683,20 +673,15 @@ public class ResponseTest extends ResponseTester {
                         + "    \"number\": \"0x1b4\",\n"
                         + "    \"hash\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"parentHash\": \"0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5\",\n"
-                        + "    \"nonce\": \"0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2\",\n"
-                        + "    \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n"
                         + "    \"logsBloom\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"transactionsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"stateRoot\": \"0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff\",\n"
                         + "    \"receiptsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"author\": \"0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6\",\n"
                         + "    \"miner\": \"0x4e65fda2159562a496f9f3522f89122a3088497a\",\n"
-                        + "    \"mixHash\": \"0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b\",\n"
-                        + "    \"difficulty\": \"0x027f07\",\n"
                         + "    \"totalDifficulty\":  \"0x027f07\",\n"
                         + "    \"extraData\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n"
                         + "    \"size\":  \"0x027f07\",\n"
-                        + "    \"gasLimit\": \"0x9f759\",\n"
                         + "    \"gasUsed\": \"0x9f759\",\n"
                         + "    \"timestamp\": \"0x54e34e8e\",\n"
                         + "    \"transactions\": [{"
@@ -735,20 +720,15 @@ public class ResponseTest extends ResponseTester {
                         "0x1b4",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5",
-                        "0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2",
-                        "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6",
                         "0x4e65fda2159562a496f9f3522f89122a3088497a",
-                        "0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b",
-                        "0x027f07",
                         "0x027f07",
                         "0x0000000000000000000000000000000000000000000000000000000000000000",
                         "0x027f07",
-                        "0x9f759",
                         "0x9f759",
                         "0x54e34e8e",
                         Arrays.asList(
@@ -791,20 +771,15 @@ public class ResponseTest extends ResponseTester {
                         + "    \"number\": \"0x1b4\",\n"
                         + "    \"hash\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"parentHash\": \"0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5\",\n"
-                        + "    \"nonce\": \"0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2\",\n"
-                        + "    \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n"
                         + "    \"logsBloom\": \"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331\",\n"
                         + "    \"transactionsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"stateRoot\": \"0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff\",\n"
                         + "    \"receiptsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n"
                         + "    \"author\": \"0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6\",\n"
                         + "    \"miner\": \"0x4e65fda2159562a496f9f3522f89122a3088497a\",\n"
-                        + "    \"mixHash\": \"0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b\",\n"
-                        + "    \"difficulty\": \"0x027f07\",\n"
                         + "    \"totalDifficulty\":  \"0x027f07\",\n"
                         + "    \"extraData\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n"
                         + "    \"size\":  \"0x027f07\",\n"
-                        + "    \"gasLimit\": \"0x9f759\",\n"
                         + "    \"gasUsed\": \"0x9f759\",\n"
                         + "    \"timestamp\": \"0x54e34e8e\",\n"
                         + "    \"transactions\": [{"
@@ -843,20 +818,15 @@ public class ResponseTest extends ResponseTester {
                         "0x1b4",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5",
-                        "0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2",
-                        "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
                         "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
                         "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
                         "0x1a95ad5ccdb0677af951810c6ddf4935afe4e5a6",
                         "0x4e65fda2159562a496f9f3522f89122a3088497a",
-                        "0x57919c4e72e79ad7705a26e7ecd5a08ff546ac4fa37882e9cc57be87a3dab26b",
-                        "0x027f07",
                         "0x027f07",
                         "0x0000000000000000000000000000000000000000000000000000000000000000",
                         "0x027f07",
-                        "0x9f759",
                         "0x9f759",
                         "0x54e34e8e",
                         Arrays.asList(
@@ -934,6 +904,9 @@ public class ResponseTest extends ResponseTester {
                         "0x7f110",
                         "0x7f110",
                         "0x09184e72a000",
+                        null,
+                        null,
+                        null,
                         "0x603880600c6000396000f300603880600c6000396000f3603880600c6000396000f360",
                         null,
                         "0x6614d7d7bfe989295821985de0439e868b26ff05f98ae0da0ce5bccc24ea368a083b785323c9fcb405dd4c10a2c95d93312a1b2d68beb24ab4ea7c3c2f7c455b",

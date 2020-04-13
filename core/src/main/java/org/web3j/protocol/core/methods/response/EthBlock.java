@@ -61,20 +61,15 @@ public class EthBlock extends Response<EthBlock.Block> {
         private String number;
         private String hash;
         private String parentHash;
-        private String nonce;
-        private String sha3Uncles;
         private String logsBloom;
         private String transactionsRoot;
         private String stateRoot;
         private String receiptsRoot;
         private String author;
         private String miner;
-        private String mixHash;
-        private String difficulty;
         private String totalDifficulty;
         private String extraData;
         private String size;
-        private String gasLimit;
         private String gasUsed;
         private String timestamp;
         private List<TransactionResult> transactions;
@@ -87,20 +82,15 @@ public class EthBlock extends Response<EthBlock.Block> {
                 String number,
                 String hash,
                 String parentHash,
-                String nonce,
-                String sha3Uncles,
                 String logsBloom,
                 String transactionsRoot,
                 String stateRoot,
                 String receiptsRoot,
                 String author,
                 String miner,
-                String mixHash,
-                String difficulty,
                 String totalDifficulty,
                 String extraData,
                 String size,
-                String gasLimit,
                 String gasUsed,
                 String timestamp,
                 List<TransactionResult> transactions,
@@ -109,20 +99,15 @@ public class EthBlock extends Response<EthBlock.Block> {
             this.number = number;
             this.hash = hash;
             this.parentHash = parentHash;
-            this.nonce = nonce;
-            this.sha3Uncles = sha3Uncles;
             this.logsBloom = logsBloom;
             this.transactionsRoot = transactionsRoot;
             this.stateRoot = stateRoot;
             this.receiptsRoot = receiptsRoot;
             this.author = author;
             this.miner = miner;
-            this.mixHash = mixHash;
-            this.difficulty = difficulty;
             this.totalDifficulty = totalDifficulty;
             this.extraData = extraData;
             this.size = size;
-            this.gasLimit = gasLimit;
             this.gasUsed = gasUsed;
             this.timestamp = timestamp;
             this.transactions = transactions;
@@ -156,26 +141,6 @@ public class EthBlock extends Response<EthBlock.Block> {
 
         public void setParentHash(String parentHash) {
             this.parentHash = parentHash;
-        }
-
-        public BigInteger getNonce() {
-            return Numeric.decodeQuantity(nonce);
-        }
-
-        public String getNonceRaw() {
-            return nonce;
-        }
-
-        public void setNonce(String nonce) {
-            this.nonce = nonce;
-        }
-
-        public String getSha3Uncles() {
-            return sha3Uncles;
-        }
-
-        public void setSha3Uncles(String sha3Uncles) {
-            this.sha3Uncles = sha3Uncles;
         }
 
         public String getLogsBloom() {
@@ -226,26 +191,6 @@ public class EthBlock extends Response<EthBlock.Block> {
             this.miner = miner;
         }
 
-        public String getMixHash() {
-            return mixHash;
-        }
-
-        public void setMixHash(String mixHash) {
-            this.mixHash = mixHash;
-        }
-
-        public BigInteger getDifficulty() {
-            return Numeric.decodeQuantity(difficulty);
-        }
-
-        public String getDifficultyRaw() {
-            return difficulty;
-        }
-
-        public void setDifficulty(String difficulty) {
-            this.difficulty = difficulty;
-        }
-
         public BigInteger getTotalDifficulty() {
             return Numeric.decodeQuantity(totalDifficulty);
         }
@@ -276,18 +221,6 @@ public class EthBlock extends Response<EthBlock.Block> {
 
         public void setSize(String size) {
             this.size = size;
-        }
-
-        public BigInteger getGasLimit() {
-            return Numeric.decodeQuantity(gasLimit);
-        }
-
-        public String getGasLimitRaw() {
-            return gasLimit;
-        }
-
-        public void setGasLimit(String gasLimit) {
-            this.gasLimit = gasLimit;
         }
 
         public BigInteger getGasUsed() {
@@ -363,16 +296,6 @@ public class EthBlock extends Response<EthBlock.Block> {
                     : block.getParentHash() != null) {
                 return false;
             }
-            if (getNonceRaw() != null
-                    ? !getNonceRaw().equals(block.getNonceRaw())
-                    : block.getNonceRaw() != null) {
-                return false;
-            }
-            if (getSha3Uncles() != null
-                    ? !getSha3Uncles().equals(block.getSha3Uncles())
-                    : block.getSha3Uncles() != null) {
-                return false;
-            }
             if (getLogsBloom() != null
                     ? !getLogsBloom().equals(block.getLogsBloom())
                     : block.getLogsBloom() != null) {
@@ -403,16 +326,6 @@ public class EthBlock extends Response<EthBlock.Block> {
                     : block.getMiner() != null) {
                 return false;
             }
-            if (getMixHash() != null
-                    ? !getMixHash().equals(block.getMixHash())
-                    : block.getMixHash() != null) {
-                return false;
-            }
-            if (getDifficultyRaw() != null
-                    ? !getDifficultyRaw().equals(block.getDifficultyRaw())
-                    : block.getDifficultyRaw() != null) {
-                return false;
-            }
             if (getTotalDifficultyRaw() != null
                     ? !getTotalDifficultyRaw().equals(block.getTotalDifficultyRaw())
                     : block.getTotalDifficultyRaw() != null) {
@@ -426,11 +339,6 @@ public class EthBlock extends Response<EthBlock.Block> {
             if (getSizeRaw() != null
                     ? !getSizeRaw().equals(block.getSizeRaw())
                     : block.getSizeRaw() != null) {
-                return false;
-            }
-            if (getGasLimitRaw() != null
-                    ? !getGasLimitRaw().equals(block.getGasLimitRaw())
-                    : block.getGasLimitRaw() != null) {
                 return false;
             }
             if (getGasUsedRaw() != null
@@ -463,8 +371,6 @@ public class EthBlock extends Response<EthBlock.Block> {
             int result = getNumberRaw() != null ? getNumberRaw().hashCode() : 0;
             result = 31 * result + (getHash() != null ? getHash().hashCode() : 0);
             result = 31 * result + (getParentHash() != null ? getParentHash().hashCode() : 0);
-            result = 31 * result + (getNonceRaw() != null ? getNonceRaw().hashCode() : 0);
-            result = 31 * result + (getSha3Uncles() != null ? getSha3Uncles().hashCode() : 0);
             result = 31 * result + (getLogsBloom() != null ? getLogsBloom().hashCode() : 0);
             result =
                     31 * result
@@ -475,8 +381,6 @@ public class EthBlock extends Response<EthBlock.Block> {
             result = 31 * result + (getReceiptsRoot() != null ? getReceiptsRoot().hashCode() : 0);
             result = 31 * result + (getAuthor() != null ? getAuthor().hashCode() : 0);
             result = 31 * result + (getMiner() != null ? getMiner().hashCode() : 0);
-            result = 31 * result + (getMixHash() != null ? getMixHash().hashCode() : 0);
-            result = 31 * result + (getDifficultyRaw() != null ? getDifficultyRaw().hashCode() : 0);
             result =
                     31 * result
                             + (getTotalDifficultyRaw() != null
@@ -484,7 +388,6 @@ public class EthBlock extends Response<EthBlock.Block> {
                                     : 0);
             result = 31 * result + (getExtraData() != null ? getExtraData().hashCode() : 0);
             result = 31 * result + (getSizeRaw() != null ? getSizeRaw().hashCode() : 0);
-            result = 31 * result + (getGasLimitRaw() != null ? getGasLimitRaw().hashCode() : 0);
             result = 31 * result + (getGasUsedRaw() != null ? getGasUsedRaw().hashCode() : 0);
             result = 31 * result + (getTimestampRaw() != null ? getTimestampRaw().hashCode() : 0);
             result = 31 * result + (getTransactions() != null ? getTransactions().hashCode() : 0);
@@ -569,6 +472,9 @@ public class EthBlock extends Response<EthBlock.Block> {
                     value,
                     gas,
                     gasPrice,
+                    null,
+                    null,
+                    null,
                     input,
                     creates,
                     publicKey,
