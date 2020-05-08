@@ -25,3 +25,9 @@
     run `./gradlew run --args='transfer 0xd0a57D8acFe9979d33933d8A52971E6DC9E2DbF0 2'`
     
     This signs and transfers a transaction from account 0x0ed3510bf7adcce8c48eddf05df353407c578da5 with a hardcoded gasCost and gasLimit.  It prints out the senders balance and the receivers balance before and after transaction. You can check if this succeded by looking up transfer history for this address on (Celo Blockscout).[https://alfajores-blockscout.celo-testnet.org/address/0x0ed3510bf7adcce8c48eddf05df353407c578da5/transactions]
+
+    **Get Identifiers for Phone Number**:
+
+    run `./gradlew run --args='lookupIdentifer +15555555555' --stacktrace`
+
+    This will retrieve the addresses associated with the phoneNumber and will output the first address.
